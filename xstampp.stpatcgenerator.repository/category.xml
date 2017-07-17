@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/xstampp.stpatcgenerator.feature_1.0.0.qualifier.jar" id="xstampp.stpatcgenerator.feature" version="1.0.0.qualifier">
+      <category name="category_stpatcgenerator"/>
+   </feature>
+   <category-def name="category_stpatcgenerator" label="STPA TCGenerator"/>
+</site>
