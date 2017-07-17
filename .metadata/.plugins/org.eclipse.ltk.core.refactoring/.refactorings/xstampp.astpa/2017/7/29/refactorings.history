@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;hazschema.xsd&apos; to &apos;hazschema.xsd&apos;&#x0A;- Original project: &apos;xstampp.astpa&apos;&#x0A;- Destination element: &apos;hazschema.xsd&apos;&#x0A;- Original element: &apos;hazschema.xsd&apos;" description="Copy file" element1="src/hazschema.xsd" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1500284528152" target="/xstampp.stpatcgenerator/src/xstampp/stpatcgenerator/model/astpa/hazschema.xsd" units="0" version="1.0"/>
+</session>

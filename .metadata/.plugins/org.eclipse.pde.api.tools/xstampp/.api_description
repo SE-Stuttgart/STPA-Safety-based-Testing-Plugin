@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="xstampp" modificationStamp="40514" version="1.2">
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.ui.welcome"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.ui.common.grid"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/haz.jar&lt;xstampp.astpa.haz"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/fop.jar&lt;org.apache.fop.apps"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/commons-lang3-3.4.jar&lt;org.apache.commons.lang3"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/jaxb-impl-2.0.1.jar&lt;com.sun.xml.bind.marshaller"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.ui.workbench.contributions"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;messages"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.model"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.ui.menu.file.commands"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.util.service"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/haz.jar&lt;xstampp.astpa.haz.causalfactor"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.preferences"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.ui.editors.interfaces"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.ui.common.shell"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.util"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/haz.jar&lt;xstampp.astpa.haz.controlaction.interfaces"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/log4j-1.2.9.jar&lt;org.apache.log4j"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/xmlgraphics-commons-1.5.jar&lt;org.apache.xmlgraphics.util"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/haz.jar&lt;xstampp.astpa.haz.controlaction"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/fop.jar&lt;org.apache.fop.area"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/haz.jar&lt;xstampp.astpa.haz.hazacc"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.ui.wizards"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.ui.navigation"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/haz.jar&lt;xstampp.astpa.haz.controlaction.safetyconstraint"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.ui.common.projectsettings"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/commons-lang3-3.4.jar&lt;org.apache.commons.lang3.text.translate"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.ui.editors"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.usermanagement.api"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.ui.common"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/src&lt;xstampp.ui.common.contentassist"/>
+    </package>
+    <package visibility="1">
+        <fragment handle="=xstampp/lib\/haz.jar&lt;xstampp.astpa.haz.controlstructure.interfaces"/>
+    </package>
+</component>

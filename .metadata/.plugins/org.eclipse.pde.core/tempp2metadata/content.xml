@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadataRepository version='1.1.0'?>
+<repository name='file:/Users/asimabdulkhaleq/git/STPATCGeneratorNew/.metadata/.plugins/org.eclipse.pde.core/tempp2metadata - metadata' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1.0.0'>
+  <properties size='2'>
+    <property name='p2.timestamp' value='1499253933072'/>
+    <property name='p2.compressed' value='false'/>
+  </properties>
+  <units size='7'>
+    <unit id='org.eclipse.draw2d' version='3.10.100.201606061308' singleton='false'>
+      <update id='org.eclipse.draw2d' range='[0.0.0,3.10.100.201606061308)' severity='0'/>
+      <properties size='8'>
+        <property name='df_LT.Plugin.providerName' value='Eclipse GEF'/>
+        <property name='df_LT.Plugin.name' value='Draw2d'/>
+        <property name='org.eclipse.equinox.p2.name' value='%Plugin.name'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%Plugin.providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
+        <property name='maven-groupId' value='org.eclipse.draw2d.plugins'/>
+        <property name='maven-artifactId' value='org.eclipse.draw2d'/>
+        <property name='maven-version' value='3.10.100-SNAPSHOT'/>
+      </properties>
+      <provides size='12'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.draw2d' version='3.10.100.201606061308'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.draw2d' version='3.10.100.201606061308'/>
+        <provided namespace='java.package' name='org.eclipse.draw2d' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.draw2d.graph' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.draw2d.geometry' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.draw2d.images' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.draw2d.internal' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.draw2d.parts' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.draw2d.text' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.draw2d.widgets' version='0.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='2'>
+        <required namespace='osgi.bundle' name='org.eclipse.swt' range='[3.4.0,4.0.0)'/>
+        <required namespace='java.package' name='com.ibm.icu.text' range='3.8.1'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.draw2d' version='3.10.100.201606061308'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.draw2d&#xA;Bundle-Version: 3.10.100.201606061308
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='Default' version='1.0.0.2--crJwvE7735G3G3C597C'>
+      <properties size='3'>
+        <property name='org.eclipse.equinox.p2.name' value='Uncategorized'/>
+        <property name='org.eclipse.equinox.p2.description' value='Default category for otherwise uncategorized features'/>
+        <property name='org.eclipse.equinox.p2.type.category' value='true'/>
+      </properties>
+      <provides size='1'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='Default' version='1.0.0.2--crJwvE7735G3G3C597C'/>
+      </provides>
+      <requires size='1'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='xstampp.stpatcgenerator.feature.feature.group' range='[1.0.0.201707051325,1.0.0.201707051325]'/>
+      </requires>
+      <touchpoint id='null' version='0.0.0'/>
+    </unit>
+    <unit id='xstampp.stpatcgenerator.feature.feature.jar' version='1.0.0.201707051325'>
+      <properties size='3'>
+        <property name='org.eclipse.equinox.p2.name' value='STPA TCGenerator Feature'/>
+        <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='xstampp.stpatcgenerator.feature.feature.jar' version='1.0.0.201707051325'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+        <provided namespace='org.eclipse.update.feature' name='xstampp.stpatcgenerator.feature' version='1.0.0.201707051325'/>
+      </provides>
+      <filter>
+        (org.eclipse.update.install.features=true)
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='org.eclipse.update.feature' id='xstampp.stpatcgenerator.feature' version='1.0.0.201707051325'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='zipped'>
+            true
+          </instruction>
+        </instructions>
+      </touchpointData>
+      <licenses size='1'>
+        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+          [Enter License Description here.]
+        </license>
+      </licenses>
+      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+        [Enter Copyright Description here.]
+      </copyright>
+    </unit>
+    <unit id='xstampp.stpatcgenerator.feature.feature.group' version='1.0.0.201707051325' singleton='false'>
+      <update id='xstampp.stpatcgenerator.feature.feature.group' range='[0.0.0,1.0.0.201707051325)' severity='0'/>
+      <properties size='4'>
+        <property name='org.eclipse.equinox.p2.name' value='STPA TCGenerator Feature'/>
+        <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+      </properties>
+      <provides size='1'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='xstampp.stpatcgenerator.feature.feature.group' version='1.0.0.201707051325'/>
+      </provides>
+      <requires size='24'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui' range='[3.5.0,4.0.0)'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.expressions' range='[3.4.0,4.0.0)'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='xstampp' range='2.0.0'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.workbench' range='0.0.0'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.editors' range='3.8.200'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.jface.text' range='3.9.2'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.ide' range='3.10.2'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.views.log' range='1.0.500'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.resources' range='0.0.0'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='xstampp.astpa' range='2.0.3'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.zest.core' range='1.5.201'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.zest.layouts' range='1.1.200'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='xstampp.extension' range='1.0.4'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.apache.commons.io' range='2.2.0'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.console' range='3.5.300'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.apache.log4j' range='0.0.0'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.gef' range='0.0.0'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.swt' range='[3.4.0,4.0.0)'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.jface' range='[3.2.0,4.0.0)'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='xstampp.stpatcgenerator' range='[1.0.0.201707051325,1.0.0.201707051325]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.zest.core' range='[1.5.300.201606061308,1.5.300.201606061308]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.zest.layouts' range='[1.1.300.201606061308,1.1.300.201606061308]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.draw2d' range='[3.10.100.201606061308,3.10.100.201606061308]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='xstampp.stpatcgenerator.feature.feature.jar' range='[1.0.0.201707051325,1.0.0.201707051325]'>
+          <filter>
+            (org.eclipse.update.install.features=true)
+          </filter>
+        </required>
+      </requires>
+      <touchpoint id='null' version='0.0.0'/>
+      <licenses size='1'>
+        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+          [Enter License Description here.]
+        </license>
+      </licenses>
+      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+        [Enter Copyright Description here.]
+      </copyright>
+    </unit>
+    <unit id='xstampp.stpatcgenerator' version='1.0.0.201707051325'>
+      <update id='xstampp.stpatcgenerator' range='[0.0.0,1.0.0.201707051325)' severity='0'/>
+      <properties size='1'>
+        <property name='org.eclipse.equinox.p2.name' value='Stpatcgenerator'/>
+      </properties>
+      <provides size='6'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='xstampp.stpatcgenerator' version='1.0.0.201707051325'/>
+        <provided namespace='osgi.bundle' name='xstampp.stpatcgenerator' version='1.0.0.201707051325'/>
+        <provided namespace='java.package' name='xstampp.stpatcgenerator' version='0.0.0'/>
+        <provided namespace='java.package' name='xstampp.stpatcgenerator.gui' version='0.0.0'/>
+        <provided namespace='java.package' name='xstampp.stpatcgenerator.model.smv' version='0.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+      </provides>
+      <requires size='18'>
+        <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.expressions' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='xstampp' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui.workbench' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui.editors' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.jface.text' range='3.9.2'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui.ide' range='3.10.2'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui.views.log' range='1.0.500'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='xstampp.astpa' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.zest.core' range='1.5.201'/>
+        <required namespace='osgi.bundle' name='org.eclipse.zest.layouts' range='1.1.200'/>
+        <required namespace='osgi.bundle' name='xstampp.extension' range='1.0.4'/>
+        <required namespace='osgi.bundle' name='org.apache.commons.io' range='2.2.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui.console' range='3.5.300'/>
+        <required namespace='java.package' name='org.apache.log4j' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.gef' range='0.0.0'/>
+        <required namespace='java.package' name='org.eclipse.gef.editparts' range='0.0.0'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='xstampp.stpatcgenerator' version='1.0.0.201707051325'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: xstampp.stpatcgenerator;singleton:=true&#xA;Bundle-Version: 1.0.0.201707051325
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.zest.core' version='1.5.300.201606061308'>
+      <update id='org.eclipse.zest.core' range='[0.0.0,1.5.300.201606061308)' severity='0'/>
+      <properties size='8'>
+        <property name='df_LT.Plugin.providerName' value='Eclipse GEF'/>
+        <property name='df_LT.Plugin.name' value='Zest Core'/>
+        <property name='org.eclipse.equinox.p2.name' value='%Plugin.name'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%Plugin.providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
+        <property name='maven-groupId' value='org.eclipse.zest.plugins'/>
+        <property name='maven-artifactId' value='org.eclipse.zest.core'/>
+        <property name='maven-version' value='1.5.300-SNAPSHOT'/>
+      </properties>
+      <provides size='8'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.zest.core' version='1.5.300.201606061308'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.zest.core' version='1.5.300.201606061308'/>
+        <provided namespace='java.package' name='org.eclipse.zest.core.viewers' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.zest.core.viewers.internal' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.zest.core.widgets' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.zest.core.widgets.internal' version='0.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='4'>
+        <required namespace='osgi.bundle' name='org.eclipse.zest.layouts' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui' range='[3.2.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.draw2d' range='0.0.0'/>
+        <required namespace='java.package' name='com.ibm.icu.text' range='3.8.1'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.zest.core' version='1.5.300.201606061308'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.zest.core;singleton:=true&#xA;Bundle-Version: 1.5.300.201606061308
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='org.eclipse.zest.layouts' version='1.1.300.201606061308'>
+      <update id='org.eclipse.zest.layouts' range='[0.0.0,1.1.300.201606061308)' severity='0'/>
+      <properties size='8'>
+        <property name='df_LT.Plugin.providerName' value='Eclipse GEF'/>
+        <property name='df_LT.Plugin.name' value='Zest Layouts'/>
+        <property name='org.eclipse.equinox.p2.name' value='%Plugin.name'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%Plugin.providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
+        <property name='maven-groupId' value='org.eclipse.zest.plugins'/>
+        <property name='maven-artifactId' value='org.eclipse.zest.layouts'/>
+        <property name='maven-version' value='1.1.300-SNAPSHOT'/>
+      </properties>
+      <provides size='12'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.zest.layouts' version='1.1.300.201606061308'/>
+        <provided namespace='osgi.bundle' name='org.eclipse.zest.layouts' version='1.1.300.201606061308'/>
+        <provided namespace='java.package' name='org.eclipse.zest.layouts' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.zest.layouts.algorithms' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.zest.layouts.algorithms.internal' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.zest.layouts.constraints' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.zest.layouts.dataStructures' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.zest.layouts.exampleStructures' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.zest.layouts.exampleUses' version='0.0.0'/>
+        <provided namespace='java.package' name='org.eclipse.zest.layouts.progress' version='0.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='4'>
+        <required namespace='osgi.bundle' name='org.eclipse.swt' range='[3.4.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='[3.3.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.jface' range='[3.2.0,4.0.0)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.draw2d' range='0.0.0'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='org.eclipse.zest.layouts' version='1.1.300.201606061308'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: org.eclipse.zest.layouts;singleton:=true&#xA;Bundle-Version: 1.1.300.201606061308
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+  </units>
+</repository>

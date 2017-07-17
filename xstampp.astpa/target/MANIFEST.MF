@@ -1,0 +1,78 @@
+Manifest-Version: 1.0
+Export-Package: com.sun.xml.bind,com.sun.xml.bind.marshaller,xstampp.a
+ stpa;uses:="org.osgi.framework,org.eclipse.jface.resource,org.eclipse
+ .ui.plugin",xstampp.astpa.controlstructure; uses:="xstampp.model,  or
+ g.eclipse.gef.palette,  org.eclipse.gef.ui.actions,  org.eclipse.swt.
+ events,  xstampp.ui.common,  org.eclipse.gef.ui.palette,  xstampp.uti
+ l,  org.eclipse.swt.widgets,  org.eclipse.gef.editparts,  xstampp.ast
+ pa.controlstructure.utilities,  xstampp.util.export,  xstampp.astpa.m
+ odel.interfaces,  org.eclipse.jface.viewers,  org.eclipse.ui,  xstamp
+ p.astpa.util,  org.eclipse.gef,  org.eclipse.gef.commands,  org.eclip
+ se.draw2d,  org.eclipse.ui.part",xstampp.astpa.controlstructure.contr
+ oller.commands,xstampp.astpa.controlstructure.controller.editparts,xs
+ tampp.astpa.controlstructure.controller.factorys,xstampp.astpa.contro
+ lstructure.controller.policys,xstampp.astpa.controlstructure.figure,x
+ stampp.astpa.controlstructure.utilities,xstampp.astpa.haz,xstampp.ast
+ pa.haz.controlaction,xstampp.astpa.haz.controlaction.interfaces,xstam
+ pp.astpa.haz.controlstructure.interfaces,xstampp.astpa.haz.hazacc,xst
+ ampp.astpa.model; uses:="xstampp.model,  xstampp.astpa.model.controls
+ tructure.interfaces,  xstampp.astpa.model.controlaction.interfaces,  
+ xstampp.astpa.model.interfaces,  xstampp.astpa.model.controlstructure
+ .components,  org.eclipse.core.runtime.jobs,  xstampp.astpa.model.con
+ trolaction,  org.eclipse.swt.custom,  org.apache.log4j,  org.eclipse.
+ draw2d.geometry",xstampp.astpa.model.causalfactor;uses:="xstampp.astp
+ a.model.hazacc,xstampp.astpa.model",xstampp.astpa.model.controlaction
+ ; uses:="xstampp.astpa.model.hazacc,  xstampp.astpa.model,  xstampp.a
+ stpa.model.controlaction.interfaces,  xstampp.astpa.model.controlacti
+ on.safetyconstraint",xstampp.astpa.model.controlaction.interfaces,xst
+ ampp.astpa.model.controlaction.rules,xstampp.astpa.model.controlactio
+ n.safetyconstraint;uses:="xstampp.astpa.model",xstampp.astpa.model.co
+ ntrolstructure,xstampp.astpa.model.controlstructure.components;uses:=
+ "xstampp.astpa.model.causalfactor,xstampp.astpa.model.controlstructur
+ e.interfaces,org.eclipse.draw2d.geometry",xstampp.astpa.model.control
+ structure.interfaces;uses:="xstampp.astpa.model.controlstructure.comp
+ onents,org.eclipse.draw2d.geometry",xstampp.astpa.model.export,xstamp
+ p.astpa.model.hazacc;uses:="xstampp.astpa.model",xstampp.astpa.model.
+ interfaces; uses:="xstampp.model,  xstampp.astpa.model,  xstampp.astp
+ a.model.controlstructure.interfaces,  xstampp.astpa.model.controlacti
+ on,  xstampp.astpa.model.controlaction.interfaces,  org.eclipse.swt.c
+ ustom,  xstampp.astpa.model.controlstructure.components,  org.eclipse
+ .draw2d.geometry",xstampp.astpa.model.projectdata;uses:="javax.xml.bi
+ nd.annotation.adapters,org.eclipse.swt.custom",xstampp.astpa.model.sd
+ s;uses:="xstampp.astpa.model",xstampp.astpa.ui,xstampp.astpa.ui.commo
+ n.grid,xstampp.astpa.ui.sds,xstampp.astpa.ui.systemdescription; uses:
+ ="xstampp.model,  org.eclipse.ui,  org.eclipse.swt.events,  org.eclip
+ se.jface.util,  xstampp.util,  org.eclipse.swt.graphics,  org.eclipse
+ .swt.widgets,  org.eclipse.swt.custom,  xstampp.ui.editors.interfaces
+ ,  org.eclipse.jface.viewers",xstampp.astpa.ui.unsafecontrolaction,xs
+ tampp.astpa.util; uses:="org.eclipse.ui,  org.eclipse.ui.menus,  org.
+ eclipse.swt.graphics,  org.eclipse.swt.widgets,  org.eclipse.gef.edit
+ parts,  xstampp.ui.editors.interfaces,  org.eclipse.jface.viewers",xs
+ tampp.astpa.util.jobs; uses:="org.eclipse.core.runtime.jobs,  xstampp
+ .model,  org.eclipse.core.runtime,  xstampp.astpa.wizards,  org.apach
+ e.log4j",xstampp.astpa.wizards,xstampp.astpa.wizards.pages
+Require-Bundle: org.eclipse.ui,xstampp,org.eclipse.gef;bundle-version=
+ "3.9.100",org.eclipse.equinox.p2.core,org.eclipse.equinox.p2.operatio
+ ns;bundle-version="2.3.0",org.eclipse.equinox.p2.engine;bundle-versio
+ n="2.3.0",org.eclipse.core.runtime;bundle-version="3.9.0",org.eclipse
+ .core.resources;bundle-version="3.8.101",org.eclipse.e4.ui.workbench.
+ addons.swt;bundle-version="1.0.1",xstampp.extension;bundle-version="1
+ .0.0",org.eclipse.jface,org.eclipse.core.jobs,org.eclipse.swt
+Bundle-Vendor: Universität Stuttgart
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/avalon-framework-4.2.0.jar,lib/batik-all-1.7.jar
+ ,lib/commons-io-1.3.1.jar,lib/commons-logging-1.0.4.jar,lib/fop.jar,l
+ ib/log4j-1.2.9.jar,lib/serializer-2.7.0.jar,lib/xalan-2.7.0.jar,lib/x
+ ercesImpl-2.7.1.jar,lib/xml-apis-1.3.04.jar,lib/xml-apis-ext-1.3.04.j
+ ar,lib/xmlgraphics-commons-1.5.jar,lib/jaxb-impl-2.0.1.jar,.,lib/org.
+ eclipse.nebula.widgets.grid_1.0.0.201506151822.jar,lib/haz.jar,lib/cu
+ rvesapi-1.03.jar,lib/poi-3.14-20160307.jar,lib/poi-ooxml-3.14-2016030
+ 7.jar,lib/poi-ooxml-schemas-3.14-20160307.jar,lib/xmlbeans-2.6.0.jar
+Bundle-Version: 2.0.5
+Bundle-Name: Astpa
+Bundle-Activator: xstampp.astpa.Activator
+Bundle-ManifestVersion: 2
+Import-Package: org.apache.log4j
+Bundle-SymbolicName: xstampp.astpa;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+
