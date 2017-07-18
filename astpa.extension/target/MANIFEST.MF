@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-Version: 1.0.4
-Bundle-Name: Extension
-Bundle-ManifestVersion: 2
-Bundle-SymbolicName: xstampp.extension;singleton:=true
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-
