@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="xstampp.stpatcgenerator.generateTC"
+            name="Generate Test Case...">
+      </command>
+      <command
+            defaultHandler="xstampp.stpatcgenerator.commands.OpenStateFlow"
+            id="xstampp.stpatcgenerator.command.openStateFlowEditor"
+            name="open state flow">
+      </command>
+      <command
+            id="xstampp.stpatcgenerator.command.closeTCGenerator"
+            name="Close TCGenerator">
+      </command>
+      <command
+            id="xstampp.stpatcgenerator.command.generateSMVWithSTPA"
+            name="Generate SMV With STPA">
+      </command>
+      <command
+            id="xstampp.stpatcgenerator.command.generateSMVWithoutSTPA"
+            name="Generate SMV Without STPA">
+      </command>
+      <command
+            id="xstampp.stpatcgenerator.command.buildSafeTestModel"
+            name="Build Safe Test Model">
+      </command>
+      <command
+            id="xstampp.stpatcgenerator.command.generateTestCases"
+            name="GenerateTestCases">
+      </command>
+      <command
+            defaultHandler="xstampp.stpatcgenerator.util.handler.GenerateSMVHandler"
+            id="referenceToGenerateSMV"
+            name="referenceToGenerateSMV">
+      </command>
+      <command
+            id="xstampp.stpatcgenerator.command.verify"
+            name="Verify Without STPA-Verifier">
+      </command>
+      <command
+            id="xstampp.stpatcgenerator.command.openStateflowTreeGraph"
+            name="open Stateflow Tree Graph">
+      </command>
+      <command
+            defaultHandler="xstampp.stpatcgenerator.util.handler.VerifyWithoutVerifierHandler"
+            id="referenceToVerify"
+            name="referenceToVerify">
+      </command>
+      <command
+            id="xstampp.stpatcgenerator.command.verifyWithVerifier"
+            name="Verify With STPA-Verifier">
+      </command>
+      <command
+            defaultHandler="xstampp.stpatcgenerator.util.handler.OpenTestCaseResultHandler"
+            id="xstampp.stpatcgenerator.command.openTestCaseResult"
+            name="open test case result">
+      </command>
+      <command
+            defaultHandler="xstampp.stpatcgenerator.util.handler.OpenEFSMTreeGraphEditorHandler"
+            id="xstampp.stpatcgenerator.command.openEFSMTreeGraph"
+            name="open efsm tree graph">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="xstampp.stpatcgenerator.util.handler.ConfigureWizardHandler"
+            commandId="xstampp.stpatcgenerator.generateTC">
+            <!--
+         <activeWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="or">
+                  <or>
+                     <reference
+                           definitionId="xstampp.stpatcgenerator.isSTPATest">
+                     </reference>
+                  </or>
+               </iterate>
+            </with>
+         </activeWhen>
+         -->
+      </handler>
+      <handler
+            class="xstampp.stpatcgenerator.util.handler.GenerateSMVWithSTPAHandler"
+            commandId="xstampp.stpatcgenerator.command.generateSMVWithSTPA">
+      </handler>
+      <handler
+            class="xstampp.stpatcgenerator.util.handler.GenerateSMVWithoutSTPAHandler"
+            commandId="xstampp.stpatcgenerator.command.generateSMVWithoutSTPA">
+      </handler>
+      <handler
+            class="xstampp.stpatcgenerator.util.handler.BuildSafeTestModelHandler"
+            commandId="xstampp.stpatcgenerator.command.buildSafeTestModel">
+      </handler>
+      <handler
+            class="xstampp.stpatcgenerator.util.handler.GenerateTestCasesHandler"
+            commandId="xstampp.stpatcgenerator.command.generateTestCases">
+      </handler>
+      <handler
+            class="xstampp.stpatcgenerator.util.handler.CloseTCGeneratorHandler"
+            commandId="xstampp.stpatcgenerator.command.closeTCGenerator">
+      </handler>
+      <handler
+            class="xstampp.stpatcgenerator.util.handler.VerifyWithoutVerifierHandler"
+            commandId="xstampp.stpatcgenerator.command.verify">
+      </handler>
+      <handler
+            class="xstampp.stpatcgenerator.util.handler.OpenStateFlowTreeGraphHandler"
+            commandId="xstampp.stpatcgenerator.command.openStateflowTreeGraph">
+      </handler>
+      <handler
+            class="xstampp.stpatcgenerator.util.handler.VerifyWithVerifierHandler"
+            commandId="xstampp.stpatcgenerator.command.verifyWithVerifier">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <!--
+      <propertyTester
+            class="xstampp.stpatcgenerator.util.propertytester.ProjectTypePropertyTester"
+            id="xstampp.stpatcgenerator.projectTypeTester"
+            namespace="xstampp.stpatcgenerator.util.propertytester"
+            properties="projectType"
+            type="org.eclipse.core.runtime.IAdaptable">
+      </propertyTester>
+      -->
+      <propertyTester
+            class="xstampp.stpatcgenerator.util.propertytester.PerspectivePropertyTester"
+            id="xstampp.stpatcgenerator.perspectivePropertyTester"
+            namespace="xstampp.stpatcgenerator.util.propertytester"
+            properties="perspective"
+            type="java.lang.Object">
+      </propertyTester>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="xstampp.stpatcgenerator.ActivationTrigger"></startup>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:astpa.explorer">
+         <command
+               commandId="xstampp.stpatcgenerator.generateTC"
+               label="Generate Test Cases ..."
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <separator
+               name="xstampp.stpatcgenerator.separator1"
+               visible="true">
+         </separator>
+         <toolbar
+               id="xstampp.stpatcgenerator.toolbar">
+            <command
+                  commandId="xstampp.stpatcgenerator.command.closeTCGenerator"
+                  icon="icons/Button-Close-icon.png"
+                  label="Close TCGenerator"
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Close TCGenerator">
+               <visibleWhen
+                     checkEnabled="false">
+                  <reference
+                        definitionId="xstampp.stpatcgenerator.perspectiveTest">
+                  </reference>
+               </visibleWhen>
+            </command>
+            <command
+                  commandId="referenceToGenerateSMV"
+                  icon="icons/generate.png"
+                  label="Generate SMV"
+                  mode="FORCE_TEXT"
+                  style="pulldown"
+                  tooltip="Generate SMV">
+               <visibleWhen
+                     checkEnabled="false">
+                  <reference
+                        definitionId="xstampp.stpatcgenerator.perspectiveTest">
+                  </reference>
+               </visibleWhen>
+            </command>
+            <command
+                  commandId="referenceToVerify"
+                  icon="icons/Ok-icon.png"
+                  label="Verify"
+                  mode="FORCE_TEXT"
+                  style="pulldown">
+               <visibleWhen
+                     checkEnabled="false">
+                  <reference
+                        definitionId="xstampp.stpatcgenerator.perspectiveTest">
+                  </reference>
+               </visibleWhen>
+            </command>
+            <command
+                  commandId="xstampp.stpatcgenerator.command.buildSafeTestModel"
+                  icon="icons/Spell-Check-icon.png"
+                  label="Build Safe Test Model"
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Build Saft Test Model">
+               <visibleWhen
+                     checkEnabled="false">
+                  <reference
+                        definitionId="xstampp.stpatcgenerator.perspectiveTest">
+                  </reference>
+               </visibleWhen>
+            </command>
+            <command
+                  commandId="xstampp.stpatcgenerator.command.generateTestCases"
+                  icon="icons/1452725789_tests.png"
+                  label="Generate Test Cases"
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Generate Test Cases">
+               <visibleWhen
+                     checkEnabled="false">
+                  <reference
+                        definitionId="xstampp.stpatcgenerator.perspectiveTest">
+                  </reference>
+               </visibleWhen>
+            </command>
+            <command
+                  commandId="xstampp.stpatcgenerator.command.openStateflowTreeGraph"
+                  icon="icons/IMGExport.png"
+                  label="Open SBM Graph"
+                  mode="FORCE_TEXT"
+                  style="push"
+                  tooltip="Open SBM Graph">
+               <visibleWhen
+                     checkEnabled="false">
+                  <reference
+                        definitionId="xstampp.stpatcgenerator.perspectiveTest">
+                  </reference>
+               </visibleWhen>
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            locationURI="menu:referenceToGenerateSMV">
+         <command
+               commandId="xstampp.stpatcgenerator.command.generateSMVWithSTPA"
+               icon="icons/generate.png"
+               label="Generate SMV with STPA"
+               style="push">
+         </command>
+         <command
+               commandId="xstampp.stpatcgenerator.command.generateSMVWithoutSTPA"
+               icon="icons/generate.png"
+               label="Generate SMV Without STPA"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:referenceToVerify">
+         <command
+               commandId="xstampp.stpatcgenerator.command.verify"
+               icon="icons/Ok-icon.png"
+               label="Verify without STPA Verifier"
+               style="push">
+         </command>
+         <command
+               commandId="xstampp.stpatcgenerator.command.verifyWithVerifier"
+               icon="icons/Ok-icon.png"
+               label="Verify With STPA Verifier"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <!--
+      <editor
+            class="xstampp.stpatcgenerator.ui.editors.graph.StateFlowEditor"
+            default="false"
+            id="xstampp.stpatcgenerator.statefloweditor"
+            name="State Flow XML">
+      </editor>
+      -->
+      <editor
+            class="xstampp.stpatcgenerator.ui.editors.StateflowTreeGraphEditor"
+            default="false"
+            id="xstampp.stpatcgenerator.editor.stateflowtreegraph"
+            name="Hierachical Tree of Safe Behavioral Model">
+      </editor>
+      <!--
+      <editor
+            class="xstampp.stpatcgenerator.ui.editors.GenerateSMVEditor"
+            default="false"
+            id="xstampp.stpatcgenerator.generateSMVeditor"
+            name="Genertate SMV">
+      </editor>
+      -->
+      <editor
+            class="xstampp.stpatcgenerator.ui.editors.SMVTextEditor"
+            default="false"
+            id="xstampp.stpatcgenerator.editor.smvTextEditor"
+            name="SMV Text Editor">
+      </editor>
+      <editor
+            class="xstampp.stpatcgenerator.ui.editors.GTCConfigEditor"
+            default="false"
+            id="xstampp.stpatcgenerator.editor.GTCconfig"
+            name="Generate Test Cases Configuration">
+      </editor>
+      <editor
+            class="xstampp.stpatcgenerator.ui.editors.TestCaseResultEditor"
+            default="false"
+            id="xstampp.stpatcgenerator.editor.testCaseResult"
+            name="Test Case Result">
+      </editor>
+      <editor
+            class="xstampp.stpatcgenerator.ui.editors.EFSMTreeGraphEditor"
+            default="false"
+            id="xstampp.stpatcgenerator.editor.efsmTreeGraph"
+            name="Extended Finite State Machine Graph">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="xstampp.stpatcgenerator.ui.views.StateFlowPropertiesView"
+            id="xstampp.stpatcgenerator.view.stateFlowProperties"
+            name="Safe Behavioral Model Properties"
+            restorable="true">
+      </view>
+      <view
+            class="xstampp.stpatcgenerator.ui.views.StateFlowTruthTableView"
+            id="xstampp.stpatcgenerator.view.stateFlowTruthTable"
+            name="Safe Behavioral Model Truth Table"
+            restorable="true">
+      </view>
+      <view
+            class="xstampp.stpatcgenerator.ui.views.ValidateSTPAandSBM"
+            id="xstampp.stpatcgenerator.view.compareSTPAStateflow"
+            name="Validation STPA &lt;-&gt; Safe Behavioral Model"
+            restorable="true">
+      </view>
+      <view
+            class="xstampp.stpatcgenerator.ui.views.LogErrorView"
+            icon="icons/errorLog.png"
+            id="xstampp.stpatcgenerator.view.logError"
+            name="Error Log"
+            restorable="true">
+      </view>
+      <view
+            class="xstampp.stpatcgenerator.ui.views.LTLTableView"
+            id="xstampp.stpatcgenerator.view.ltlTable"
+            name="LTL Table"
+            restorable="true">
+      </view>
+      <view
+            class="xstampp.stpatcgenerator.ui.views.EFSMTruthTableView"
+            id="xstampp.stpatcgenerator.view.EFSMTruthTable"
+            name="Extended Finite State Machine Truth Table"
+            restorable="true">
+      </view>
+      <view
+            class="xstampp.stpatcgenerator.ui.views.TraceabilityMatrixView"
+            id="xstampp.stpatcgenerator.view.traceabilityMatrix"
+            name="Traceability Matrix"
+            restorable="true">
+      </view>
+      <view
+            class="xstampp.stpatcgenerator.ui.views.TestCaseHistogrammView"
+            id="xstampp.stpatcgenerator.view.tcHistogramm"
+            name="Test Cases Traceability Histogramm"
+            restorable="true">
+      </view>
+      <!--
+      <view
+            class="xstampp.stpatcgenerator.views.StateFlowPropertiesView"
+            id="xstampp.stpatcgenerator.view.stateFlowProperties"
+            name="State Flow Properties"
+            restorable="true">
+      </view>
+      -->
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="xstampp.stpatcgenerator.isSTPATest">
+         <with
+               variable="xstampp.stpatcgenerator.projectType">
+         </with>
+      </definition>
+      <definition
+            id="xstampp.stpatcgenerator.perspectiveTest">
+         <with
+               variable="activeWorkbenchWindow.activePerspective">
+            <test
+                  forcePluginActivation="true"
+                  property="xstampp.stpatcgenerator.util.propertytester.perspective">
+            </test>
+         </with>
+      </definition>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="xstampp.stpatcgenerator.ui.perspective.STPATCGeneratorPerspective"
+            id="xstampp.stpatcgenerator.perspective"
+            name="STPATCGeneratorPerspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <category
+            id="xstampp.stpatcgenerator.category"
+            name="STPA TCGenerator">
+      </category>
+      <wizard
+            category="xstampp.stpatcgenerator.category"
+            class="xstampp.stpatcgenerator.wizards.CSVWizardOfFinalReport"
+            icon="icons/STPA_logo16.png"
+            id="xstampp.stpatcgenerator.export.final"
+            name="STPA TCGenerator Final Report">
+      </wizard>
+      <category
+            id="xstampp.stpatcgenerator.category.img"
+            name="Images"
+            parentCategory="xstampp.stpatcgenerator.category">
+      </category>
+      <wizard
+            category="xstampp.stpatcgenerator.category/xstampp.stpatcgenerator.category.img"
+            class="xstampp.stpatcgenerator.wizards.IMGWizardOfStateflowTreeGraph"
+            icon="icons/IMGExport.png"
+            id="xstampp.stpatcgenerator.export.stateFlowTreeGraph"
+            name="Safe Behavioral Model Tree Graph">
+      </wizard>
+      <wizard
+            category="xstampp.stpatcgenerator.category/xstampp.stpatcgenerator.category.img"
+            class="xstampp.stpatcgenerator.wizards.IMGWizardOfEFSMGraph"
+            icon="icons/IMGExport.png"
+            id="xstampp.stpatcgenerator.export.efsmGraph"
+            name="Extended Finite State Machine Graph">
+      </wizard>
+      <wizard
+            category="xstampp.stpatcgenerator.category/xstampp.stpatcgenerator.category.img"
+            class="xstampp.stpatcgenerator.wizards.IMGWizardOfHistogramm"
+            icon="icons/IMGExport.png"
+            id="xstampp.stpatcgenerator.export.histogramm"
+            name="Histogramm SSR Traceability Statistic ">
+      </wizard>
+      <category
+            id="xstampp.stpatcgenerator.category.csv"
+            name="CSV"
+            parentCategory="xstampp.stpatcgenerator.category">
+      </category>
+      <wizard
+            category="xstampp.stpatcgenerator.category/xstampp.stpatcgenerator.category.csv"
+            class="xstampp.stpatcgenerator.wizards.CSVWizardOfStateFlowTruthTable"
+            icon="icons/CSVExport2.png"
+            id="xstampp.stpatcgenerator.exportWizard.csv.stateflowtruthtable"
+            name="Safe Behavioral Model Truth Table">
+      </wizard>
+      <wizard
+            category="xstampp.stpatcgenerator.category/xstampp.stpatcgenerator.category.csv"
+            class="xstampp.stpatcgenerator.wizards.CSVWizardOfStateFlowProperties"
+            icon="icons/CSVExport2.png"
+            id="xstampp.stpatcgenerator.exportWizard.csv.stateflowProperties"
+            name="Safe Behavioral Model Properties">
+      </wizard>
+      <wizard
+            category="xstampp.stpatcgenerator.category/xstampp.stpatcgenerator.category.csv"
+            class="xstampp.stpatcgenerator.wizards.CSVWizardOfEfsmTruthTable"
+            icon="icons/CSVExport2.png"
+            id="xstampp.stpatcgenerator.exportWizard.csv.efsmTruthtable"
+            name="Extended Finite State Machine Truth Table">
+      </wizard>
+      <wizard
+            category="xstampp.stpatcgenerator.category/xstampp.stpatcgenerator.category.csv"
+            class="xstampp.stpatcgenerator.wizards.CSVWizardOfTCInput"
+            icon="icons/CSVExport2.png"
+            id="xstampp.stpatcgenerator.exportWizard.csv.tcInput"
+            name="Test Case Input Variables and Configuration">
+      </wizard>
+      <wizard
+            category="xstampp.stpatcgenerator.category/xstampp.stpatcgenerator.category.csv"
+            class="xstampp.stpatcgenerator.wizards.CSVWizardOfTraceMatrix"
+            icon="icons/CSVExport2.png"
+            id="xstampp.stpatcgenerator.exportWizard.csv.traceMatrix"
+            name="Traceability Matrix">
+      </wizard>
+      <wizard
+            category="xstampp.stpatcgenerator.category/xstampp.stpatcgenerator.category.csv"
+            class="xstampp.stpatcgenerator.wizards.CSVWizardOfTCResult"
+            icon="icons/CSVExport2.png"
+            id="xstampp.stpatcgenerator.exportWizard.csv.tcResult"
+            name="Test Case Result">
+      </wizard>
+   </extension>
+
+</plugin>

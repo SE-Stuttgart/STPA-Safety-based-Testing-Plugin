@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: xstampp.stpatcgenerator;singleton:=true
+Export-Package: xstampp.stpatcgenerator,xstampp.stpatcgenerator.gui,xs
+ tampp.stpatcgenerator.model.smv; uses:="xstampp.stpatcgenerator.model
+ .stateflow.chart.parse,  org.eclipse.core.resources,  xstampp.stpatcg
+ enerator.model.stateflow.chart.generateStatesTree,  xstampp.stpatcgen
+ erator.model.astpa"
+Bundle-Name: Stpatcgenerator
+Bundle-Version: 1.0.1
+Bundle-ClassPath: lib/org.eclipse.ui.console_3.5.300.v20140424-1437.ja
+ r,lib/xmleditorkit.jar,.,lib/jgrapht-0.9.2/lib/jgraph-5.13.0.0.jar,li
+ b/jgrapht-0.9.2/lib/jgrapht-core-0.9.2.jar,lib/jgrapht-0.9.2/lib/jgra
+ pht-ext-0.9.2-uber.jar,lib/jgrapht-0.9.2/lib/jgrapht-ext-0.9.2.jar,li
+ b/jgrapht-0.9.2/lib/jgraphx-2.0.0.1.jar,lib/poi-3.14-beta1-20151223.j
+ ar,lib/poi-examples-3.14-beta1-20151223.jar,lib/poi-excelant-3.14-bet
+ a1-20151223.jar,lib/poi-ooxml-3.14-beta1-20151223.jar,lib/poi-ooxml-s
+ chemas-3.14-beta1-20151223.jar,lib/poi-scratchpad-3.14-beta1-20151223
+ .jar,lib/jcommon-1.0.23.jar,lib/jfreechart-1.0.19.jar
+Require-Bundle: org.eclipse.ui,org.eclipse.core.expressions,xstampp,or
+ g.eclipse.ui.workbench,org.eclipse.ui.editors,org.eclipse.jface.text;
+ bundle-version="3.9.2",org.eclipse.ui.ide;bundle-version="3.10.2",org
+ .eclipse.ui.views.log;bundle-version="1.0.500",org.eclipse.core.resou
+ rces,xstampp.astpa;bundle-version="2.3.0",org.eclipse.zest.core;bundl
+ e-version="1.5.201",org.eclipse.zest.layouts;bundle-version="1.1.200"
+ ,xstampp.extension;bundle-version="1.2.0",org.apache.commons.io;bundl
+ e-version="2.2.0",org.eclipse.ui.console;bundle-version="3.5.300"
+Bundle-ManifestVersion: 2
+Bundle-Activator: xstampp.stpatcgenerator.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Import-Package: org.apache.log4j,org.eclipse.gef,org.eclipse.gef.editp
+ arts
+

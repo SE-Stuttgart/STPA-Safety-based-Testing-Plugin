@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='1'>
+  <artifact classifier='osgi.bundle' id='xstampp.stpatcgenerator' version='1.0.1'>
+    <properties size='5'>
+      <property name='artifact.size' value='17331488'/>
+      <property name='download.size' value='17331488'/>
+      <property name='maven-groupId' value='xstampp.stpatcgenerator.group'/>
+      <property name='maven-artifactId' value='xstampp.stpatcgenerator'/>
+      <property name='maven-version' value='1.0.1'/>
+    </properties>
+  </artifact>
+</artifacts>

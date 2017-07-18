@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='xstampp.stpatcgenerator' version='1.0.1'>
+    <update id='xstampp.stpatcgenerator' range='[0.0.0,1.0.1)' severity='0'/>
+    <properties size='4'>
+      <property name='org.eclipse.equinox.p2.name' value='Stpatcgenerator'/>
+      <property name='maven-groupId' value='xstampp.stpatcgenerator.group'/>
+      <property name='maven-artifactId' value='xstampp.stpatcgenerator'/>
+      <property name='maven-version' value='1.0.1'/>
+    </properties>
+    <provides size='6'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='xstampp.stpatcgenerator' version='1.0.1'/>
+      <provided namespace='osgi.bundle' name='xstampp.stpatcgenerator' version='1.0.1'/>
+      <provided namespace='java.package' name='xstampp.stpatcgenerator' version='0.0.0'/>
+      <provided namespace='java.package' name='xstampp.stpatcgenerator.gui' version='0.0.0'/>
+      <provided namespace='java.package' name='xstampp.stpatcgenerator.model.smv' version='0.0.0'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+    </provides>
+    <requires size='18'>
+      <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.core.expressions' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='xstampp' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.workbench' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.editors' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.jface.text' range='3.9.2'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.ide' range='3.10.2'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.views.log' range='1.0.500'/>
+      <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='xstampp.astpa' range='2.3.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.zest.core' range='1.5.201'/>
+      <required namespace='osgi.bundle' name='org.eclipse.zest.layouts' range='1.1.200'/>
+      <required namespace='osgi.bundle' name='xstampp.extension' range='1.2.0'/>
+      <required namespace='osgi.bundle' name='org.apache.commons.io' range='2.2.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.console' range='3.5.300'/>
+      <required namespace='java.package' name='org.apache.log4j' range='0.0.0'/>
+      <required namespace='java.package' name='org.eclipse.gef' range='0.0.0'/>
+      <required namespace='java.package' name='org.eclipse.gef.editparts' range='0.0.0'/>
+    </requires>
+    <artifacts size='1'>
+      <artifact classifier='osgi.bundle' id='xstampp.stpatcgenerator' version='1.0.1'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='manifest'>
+          Bundle-SymbolicName: xstampp.stpatcgenerator;singleton:=true&#xA;Bundle-Version: 1.0.1&#xA;
+        </instruction>
+      </instructions>
+    </touchpointData>
+  </unit>
+</units>
