@@ -23,7 +23,8 @@ Require-Bundle: org.eclipse.ui,org.eclipse.core.expressions,xstampp,or
  rces,xstampp.astpa;bundle-version="2.3.0",org.eclipse.zest.core;bundl
  e-version="1.5.201",org.eclipse.zest.layouts;bundle-version="1.1.200"
  ,xstampp.extension;bundle-version="1.2.0",org.apache.commons.io;bundl
- e-version="2.2.0",org.eclipse.ui.console;bundle-version="3.5.300"
+ e-version="2.2.0",org.eclipse.ui.console,org.eclipse.ui.workbench.tex
+ teditor;bundle-version="3.9.100"
 Bundle-ManifestVersion: 2
 Bundle-Activator: xstampp.stpatcgenerator.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
