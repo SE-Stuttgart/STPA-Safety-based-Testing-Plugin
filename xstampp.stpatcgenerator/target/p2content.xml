@@ -16,7 +16,7 @@
       <provided namespace='java.package' name='xstampp.stpatcgenerator.model.smv' version='0.0.0'/>
       <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
     </provides>
-    <requires size='18'>
+    <requires size='19'>
       <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
       <required namespace='osgi.bundle' name='org.eclipse.core.expressions' range='0.0.0'/>
       <required namespace='osgi.bundle' name='xstampp' range='0.0.0'/>
@@ -31,7 +31,8 @@
       <required namespace='osgi.bundle' name='org.eclipse.zest.layouts' range='1.1.200'/>
       <required namespace='osgi.bundle' name='xstampp.extension' range='1.2.0'/>
       <required namespace='osgi.bundle' name='org.apache.commons.io' range='2.2.0'/>
-      <required namespace='osgi.bundle' name='org.eclipse.ui.console' range='3.5.300'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.console' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.workbench.texteditor' range='3.9.100'/>
       <required namespace='java.package' name='org.apache.log4j' range='0.0.0'/>
       <required namespace='java.package' name='org.eclipse.gef' range='0.0.0'/>
       <required namespace='java.package' name='org.eclipse.gef.editparts' range='0.0.0'/>
