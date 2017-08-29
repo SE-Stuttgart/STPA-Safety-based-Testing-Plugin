@@ -27,7 +27,7 @@ import xstampp.stpatcgenerator.model.smv.GeneratorSMVFile;
 public class LTLTableView extends ViewPart{
 	public final static String ID = "xstampp.stpatcgenerator.view.ltlTable";
 	
-	List<String> ltlList = GeneratorSMVFile.getLTL();
+	List<String> ltlList;
 	Composite parentFrame;
 	private JPanel panel;
 	private Frame frame;
@@ -54,7 +54,7 @@ public class LTLTableView extends ViewPart{
 	public static ImageIcon questionIcon = new ImageIcon(LTLTableView.class.getResource("/icons/question-icon.png"));
 	@Override
 	public void createPartControl(Composite parent) {
-
+		ltlList = GeneratorSMVFile.getLTL();
 		parentFrame = new Composite(parent, SWT.EMBEDDED);
 		panel = new JPanel();
 		panel.setLayout(new BorderLayout());

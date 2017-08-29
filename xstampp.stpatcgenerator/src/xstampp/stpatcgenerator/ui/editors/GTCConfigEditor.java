@@ -143,7 +143,7 @@ public class GTCConfigEditor extends TCGeneratorAbstractEditor{
 		if(ProjectInformation.getTypeOfUse() == 2){
 			parseSTPA = STPATCGModelController.getConfWizard().getParseSTPA();
 			STPAConstraints = (List<RefinedSafetyRule>) (List<?>) parseSTPA
-					.getdataModel().getAllRefinedRules(null);
+					.getdataModel().getAllScenarios(true, false, false);
 			ssrList = normalizeSSR(STPAConstraints);
 		}
 		parentFrame = new Composite(parent, SWT.EMBEDDED);

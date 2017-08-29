@@ -36,6 +36,10 @@ public class VerifyWizard extends Wizard {
 	@Override
 	public boolean performFinish() {
 		nusmvPath = page.getNuSMVpath();
+		if (nusmvPath==null)
+		{
+			nusmvPath="/usr/local/NuSMV/bin";
+		}
 		if (nusmvPath != null) {
 			TCGeneratorPluginUtils.writeLocationToFile(TCGeneratorPluginUtils.NUSMV_LOCATION_FILE, nusmvPath);
 			String lastString = nusmvPath.substring(nusmvPath.length() - 5);

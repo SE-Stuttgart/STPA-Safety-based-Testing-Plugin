@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.eclipse.ui.PlatformUI"/>
+<fullyQualifiedTypeName name="xstampp.ui.navigation.ProjectExplorer"/>
+<fullyQualifiedTypeName name="xstampp.ui.common.ProjectManager"/>
+<fullyQualifiedTypeName name="xstampp.model.IDataModel"/>
+<fullyQualifiedTypeName name="xstampp.stpatcgenerator.model.astpa.STPADataModelController"/>
+<fullyQualifiedTypeName name="xstampp.astpa.model.causalfactor.ICausalController"/>
+<fullyQualifiedTypeName name="xstampp.astpa.model.controlstructure.ControlStructureController"/>
+<fullyQualifiedTypeName name="xstampp.astpa.model.DataModelController"/>
+</qualifiedTypeNameHistroy>

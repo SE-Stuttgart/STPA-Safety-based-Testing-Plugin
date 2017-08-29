@@ -34,6 +34,8 @@ import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import xstampp.DefaultPerspective;
+import xstampp.astpa.model.DataModelController;
+import xstampp.model.IDataModel;
 import xstampp.stpatcgenerator.controller.STPATCGModelController;
 import xstampp.stpatcgenerator.model.ProjectInformation;
 import xstampp.stpatcgenerator.model.astpa.ParseSTPAMain;
@@ -223,11 +225,19 @@ public class ConfigurationWizard extends Wizard {
 			}
 
 		} else if (ProjectInformation.getTypeOfUse() == 2 && ProjectInformation.getSTPAPath().length() > 0) {
+		// update the parse to be direct from XSTAMPP code 
+			//Asim solved the parse bug.
+			
 			System.out.println("Type of use = 2");
-			parseSTPA = new ParseSTPAMain(ProjectInformation.getSTPAPath());
-			parseSTPA.parseSTPAHazXML();
-			stpaDataModel = parseSTPA.getSTPAdataModel();
+			ProjectExplorer explorerView = (ProjectExplorer) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().findView(ProjectExplorer.ID);
+			UUID id = explorerView.getActiveSelection().getProjectId();
+			IDataModel dataModel = ProjectManager.getContainerInstance().getDataModel(id);
+
+			//parseSTPA.parseSTPAHazXML();
+			
+			stpaDataModel = new STPADataModelController (dataModel);
 			stateFlowProperties = parseStateflow.ParseStateflowXML();
+			parseSTPA = new ParseSTPAMain(ProjectInformation.getSTPAPath(), (DataModelController) dataModel);
 
 			tree = treeStateflow.generateTree(parseStateflow.getdataStateflowModel());
 

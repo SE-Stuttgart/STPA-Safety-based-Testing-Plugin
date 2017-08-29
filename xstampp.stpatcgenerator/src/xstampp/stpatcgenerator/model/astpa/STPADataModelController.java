@@ -1,3 +1,7 @@
+/*
+ * @author Asim
+ * I changed the parse to be direct from the XSTAMP project. 
+ */
 package xstampp.stpatcgenerator.model.astpa;
 
 import java.util.ArrayList;
@@ -7,23 +11,35 @@ import java.util.Map;
 import java.util.UUID;
 
 import xstampp.astpa.model.DataModelController;
+import xstampp.astpa.model.causalfactor.ICausalController;
 import xstampp.astpa.model.causalfactor.interfaces.ICausalComponent;
 import xstampp.astpa.model.controlaction.interfaces.IControlAction;
+import xstampp.astpa.model.controlstructure.ControlStructureController;
+//import xstampp.astpa.haz.controlaction.interfaces.IControlAction;
+//import xstampp.astpa.model.controlaction.interfaces.IControlAction;
 import xstampp.astpa.model.controlstructure.components.Component;
 import xstampp.astpa.model.controlstructure.interfaces.IRectangleComponent;
+import xstampp.model.IDataModel;
 
-public class STPADataModelController extends DataModelController {
+public class STPADataModelController  {
 	DataModelController dataModel =new DataModelController();
+	
 
     public DataModelController getdataModel() {
+    
         return dataModel;
     }
 
-    public void setDataModelController(DataModelController datamodel) {
-        this.dataModel = datamodel;
+    public void setDataModelController(IDataModel datamodel) {
+        this.dataModel = (DataModelController) datamodel;
        
     }
 
+    public STPADataModelController(IDataModel datamodel) {
+        this.dataModel = (DataModelController) datamodel;
+       
+    }
+    
     public STPADataModelController() {
     }
 
@@ -35,15 +51,15 @@ public class STPADataModelController extends DataModelController {
     
     
     
-    
     public List<ProcessModelValue> fetchProcessComponentsAsList() {
 
         List<ProcessModelValue> valuesList = new ArrayList<>();
-//        List<ICausalComponent> templist =  dataModel.getControlStructureEditorController().getCausalComponents();
-        List<ICausalComponent> templist =  dataModel.getCausalComponents();
+   //List<ICausalComponent> templist =  dataModel.getControlActionController().getCausalComponents();
+        ControlStructureController csc =  dataModel.getControlStructureController();
+        List<Component> templist= csc.getInternalComponents();
         for (int i = 0, n = templist.size(); i < n; i++) {
 
-            Component parentComponent = (Component) templist.get(i);
+        	Component  parentComponent =   templist.get(i);
             if (parentComponent.getComponentType().name().equals("CONTROLLER")) {
 
                 // get the process models
@@ -78,10 +94,10 @@ public class STPADataModelController extends DataModelController {
     public List<String> fetchControllersComponents() {
         List<String> controllers = new ArrayList<String>();
 //        List<ICausalComponent> templist = dataModel.getControlStructureEditorController().getCausalComponents();
-        List<ICausalComponent> templist = dataModel.getCausalComponents();
+        List<ICausalComponent> templist =   dataModel.getCausalComponents();
         for (int i = 0, n = templist.size(); i < n; i++) {
 
-            Component parentComponent = (Component) templist.get(i);
+        	ICausalComponent parentComponent = templist.get(i);
             if (parentComponent.getComponentType().name().equals("CONTROLLER")) {
                 controllers.add(parentComponent.getText());
 
@@ -208,7 +224,10 @@ public class STPADataModelController extends DataModelController {
         List<String> processmodelvaraibles = new ArrayList<String>();
 
 //        List<ICausalComponent> templist = dataModel.getControlStructureEditorController().getCausalComponents();
-        List<ICausalComponent> templist = dataModel.getCausalComponents();
+       // List<ICausalComponent> templist = dataModel.getCausalComponents();
+        ControlStructureController csc =  dataModel.getControlStructureController();
+        List<Component> templist= csc.getInternalComponents();
+        
         for (int i = 0, n = templist.size(); i < n; i++) {
 
             Component parentComponent = (Component) templist.get(i);
@@ -231,8 +250,11 @@ public class STPADataModelController extends DataModelController {
 
     public Map<String, UUID> fetchProcessModelvariablesWithId(){
     	Map<String, UUID> result = new HashMap<String, UUID>();
-    	List<ICausalComponent> templist = dataModel.getCausalComponents();
-        for (int i = 0, n = templist.size(); i < n; i++) {
+    	//List<ICausalComponent> templist = dataModel.getCausalComponents();
+    	 ControlStructureController csc =  dataModel.getControlStructureController();
+         List<Component> templist= csc.getInternalComponents();
+    	
+    	for (int i = 0, n = templist.size(); i < n; i++) {
 
             Component parentComponent = (Component) templist.get(i);
             if (parentComponent.getComponentType().name().equals("CONTROLLER")) {

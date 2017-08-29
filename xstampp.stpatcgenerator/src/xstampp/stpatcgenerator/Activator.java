@@ -8,7 +8,6 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
-import xstampp.DefaultPerspective;
 import xstampp.stpatcgenerator.controller.STPATCGController;
 import xstampp.stpatcgenerator.wizards.STPATCGExportWizard;
 

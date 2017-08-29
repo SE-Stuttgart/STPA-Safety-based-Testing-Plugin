@@ -40,7 +40,6 @@ public class GenerateSMVWithoutSTPAHandler extends AbstractHandler{
 	
 	public void init(){
 		tree = STPATCGModelController.getConfWizard().getTree();
-		//parseSTPA = STPATCGModelController.getConfWizard().getParseSTPA();
 		ProjectInformation.setTypeOfUse(1);
 	}
 	

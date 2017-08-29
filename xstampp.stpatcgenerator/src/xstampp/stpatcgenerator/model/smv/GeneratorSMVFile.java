@@ -31,6 +31,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 
 import xstampp.astpa.model.extendedData.RefinedSafetyRule;
+import xstampp.model.AbstractLTLProvider;
 import xstampp.stpatcgenerator.controller.STPATCGModelController;
 import xstampp.stpatcgenerator.gui.Logfile;
 import xstampp.stpatcgenerator.model.ProjectInformation;
@@ -842,11 +843,44 @@ public class GeneratorSMVFile {
         }
 
     }
-
-    private void parseSTPALTL(SMV smv) {
+//Asim changed the parseSTPALTL
+    
+ private void parseSTPALTL(SMV smv) {
     	
+    	List<AbstractLTLProvider> LTLmap= STPAdataModel.getdataModel().getAllScenarios(false, false, true);
+    
+       // List<xstampp.astpa.model.extendedData,RefinedSafetyRule> LTLmap =
+        //		(List<xstampp.astpa.model.extendedData.RefinedSafetyRule>)(List<?>) STPAdataModel.getdataModel().getAllRefinedRules(null);
+        
+        	 
+        String ltl = "";
+        if (this.isUsedbySTPA()) {
+            for (AbstractLTLProvider entry : LTLmap) {
+                ltl += "LTLSPEC  " + entry.getLtlProperty().replace("[", "G").replace("]", "").replace("==", "=").replace("&&", "&").replace ("\n", "")
+                        .replace("*", "") + "\n";
+                ltl = ltl.replace("=On", "=TRUE").replace("=Off", "=FALSE");
+                ltl = ltl.replace("= On", "=TRUE").replace("= Off", "=FALSE");
+                ltl = ltl.replace("=ON", "=TRUE").replace("=OFF", "=FALSE");
+                ltl = ltl.replace("=ON", "=TRUE").replace("=OFF", "=FALSE");
+                 
+                String subltl = entry.getLtlProperty().replace("[", "G").replace("]", "").replace("==", "=").replace("&&", "&").replace ("\n", "")
+                         .replace("*", "");
+                subltl.replace("=On", "=TRUE").replace("=Off", "=FALSE").replace("= On", "=TRUE").
+          replace("= Off", "=FALSE").replace("=ON", "=TRUE").replace("=OFF", "=FALSE").replace("=ON", "=TRUE").replace("=OFF", "=FALSE");
+                ltlStack.add(subltl);
+            }
+            smv.setSmvstr(smv.getSmvstr() + ltl);
+            System.out.println("Statring parse LTL" + ltl);
+        }
+    }
+    
+    private void parseSTPALTL2(SMV smv) {
+    	
+     
         List<xstampp.astpa.model.extendedData.RefinedSafetyRule> LTLmap =
         		(List<xstampp.astpa.model.extendedData.RefinedSafetyRule>)(List<?>) STPAdataModel.getdataModel().getAllRefinedRules(null);
+        
+        		
         String ltl = "";
         if (this.isUsedbySTPA()) {
             for (RefinedSafetyRule entry : LTLmap) {
@@ -1079,7 +1113,7 @@ public class GeneratorSMVFile {
 
             if (root.getActions().size() > 0) {
 
-                parseStateActions(smv);
+                parseStateActionsNew(smv);
                 // smv.setSmvstr(smv.getSmvstr() +"\n"+ strNextVaraibles);
             }
 
@@ -1212,7 +1246,7 @@ public class GeneratorSMVFile {
             }
 
             String random = nextSessionId();
-            String SMVfile = this.getSTPAdataModel().getProjectName() + random + ".smv";
+            String SMVfile = this.getSTPAdataModel().getdataModel().getProjectName() + random + ".smv";
             this.setFilename(SMVfile);
 
             smv.setControlActions(parseControlActions());
