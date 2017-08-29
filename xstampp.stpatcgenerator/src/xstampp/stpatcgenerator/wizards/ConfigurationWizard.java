@@ -238,7 +238,7 @@ public class ConfigurationWizard extends Wizard {
 			stpaDataModel = new STPADataModelController (dataModel);
 			stateFlowProperties = parseStateflow.ParseStateflowXML();
 			parseSTPA = new ParseSTPAMain(ProjectInformation.getSTPAPath(), (DataModelController) dataModel);
-
+            parseSTPA.setSTPAdataModel(stpaDataModel);
 			tree = treeStateflow.generateTree(parseStateflow.getdataStateflowModel());
 
 			if (tree != null) {

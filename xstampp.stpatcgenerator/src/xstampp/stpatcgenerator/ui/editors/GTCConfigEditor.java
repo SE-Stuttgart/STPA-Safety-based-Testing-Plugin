@@ -36,6 +36,7 @@ import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.PartInitException;
 
 import xstampp.astpa.model.extendedData.RefinedSafetyRule;
+import xstampp.model.AbstractLTLProvider;
 import xstampp.stpatcgenerator.controller.STPATCGModelController;
 import xstampp.stpatcgenerator.model.ProjectInformation;
 import xstampp.stpatcgenerator.model.astpa.ParseSTPAMain;
@@ -62,7 +63,7 @@ public class GTCConfigEditor extends TCGeneratorAbstractEditor{
 	private EFSM fsm = STPATCGModelController.getSfmHandler().getFsm();
 	private ParseSTPAMain parseSTPA;
 	TestConfigurations configure = new TestConfigurations();
-	List<RefinedSafetyRule> STPAConstraints;
+	List<AbstractLTLProvider> STPAConstraints;
 	List<StateTransition> truthtable = fsm.getfsmTruthTable();
 	// Normalize and spilt ssr into control action, source state and transitions
 	List<SimpleSTPAConstraint> ssrList;
@@ -142,8 +143,7 @@ public class GTCConfigEditor extends TCGeneratorAbstractEditor{
 //		shell =  PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 		if(ProjectInformation.getTypeOfUse() == 2){
 			parseSTPA = STPATCGModelController.getConfWizard().getParseSTPA();
-			STPAConstraints = (List<RefinedSafetyRule>) (List<?>) parseSTPA
-					.getdataModel().getAllScenarios(true, false, false);
+			STPAConstraints =   parseSTPA.getSTPAdataModel(). fetchSafetyConstraintsAs();
 			ssrList = normalizeSSR(STPAConstraints);
 		}
 		parentFrame = new Composite(parent, SWT.EMBEDDED);
@@ -377,10 +377,11 @@ public class GTCConfigEditor extends TCGeneratorAbstractEditor{
 	 * @param STPAConstraints
 	 * @return A List contains following information for each SSR: SSID, control action, source state and transition
 	 */
-	private List<SimpleSTPAConstraint> normalizeSSR(List<RefinedSafetyRule> STPAConstraints){
+	private List<SimpleSTPAConstraint> normalizeSSR(List<AbstractLTLProvider> STPAConstraints){
 		List<SimpleSTPAConstraint> ssrList = new ArrayList<SimpleSTPAConstraint>();
-		for (RefinedSafetyRule acc : STPAConstraints) {
-			String rule = acc.getCriticalCombies();	
+		for (AbstractLTLProvider acc : STPAConstraints) {
+			//String rule = acc.getCriticalCombies();	
+			String rule = acc.getSafetyRule();
 			String constraint = acc.getRefinedSafetyConstraint();
 //			System.out.println(constraint);
 			if (rule != null && constraint != null) {
@@ -437,7 +438,7 @@ public class GTCConfigEditor extends TCGeneratorAbstractEditor{
 	private void setRowsForSSRTable() {
 		// TODO Auto-generated method stub
 		
-		for (RefinedSafetyRule acc : STPAConstraints) {
+		for (AbstractLTLProvider acc : STPAConstraints) {
 			String[] objects = new String[2];
 			objects[0] = String.valueOf(acc.getNumber());
 			objects[1] = acc.getSafetyRule();
@@ -619,7 +620,7 @@ public class GTCConfigEditor extends TCGeneratorAbstractEditor{
 	}
 
 	
-	public List<RefinedSafetyRule> getSTPAConstraints() {
+	public List<AbstractLTLProvider> getSTPAConstraints() {
 		return STPAConstraints;
 	}
 

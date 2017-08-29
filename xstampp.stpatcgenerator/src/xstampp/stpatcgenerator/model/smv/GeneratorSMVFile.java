@@ -847,7 +847,7 @@ public class GeneratorSMVFile {
     
  private void parseSTPALTL(SMV smv) {
     	
-    	List<AbstractLTLProvider> LTLmap= STPAdataModel.getdataModel().getAllScenarios(false, false, true);
+    	List<String> LTLmaps=  STPAdataModel.fetchLTLs();
     
        // List<xstampp.astpa.model.extendedData,RefinedSafetyRule> LTLmap =
         //		(List<xstampp.astpa.model.extendedData.RefinedSafetyRule>)(List<?>) STPAdataModel.getdataModel().getAllRefinedRules(null);
@@ -855,15 +855,15 @@ public class GeneratorSMVFile {
         	 
         String ltl = "";
         if (this.isUsedbySTPA()) {
-            for (AbstractLTLProvider entry : LTLmap) {
-                ltl += "LTLSPEC  " + entry.getLtlProperty().replace("[", "G").replace("]", "").replace("==", "=").replace("&&", "&").replace ("\n", "")
+            for (String entry : LTLmaps) {
+                ltl += "LTLSPEC  " + entry.replace("[", "G").replace("]", "").replace("==", "=").replace("&&", "&").replace ("\n", "")
                         .replace("*", "") + "\n";
                 ltl = ltl.replace("=On", "=TRUE").replace("=Off", "=FALSE");
                 ltl = ltl.replace("= On", "=TRUE").replace("= Off", "=FALSE");
                 ltl = ltl.replace("=ON", "=TRUE").replace("=OFF", "=FALSE");
                 ltl = ltl.replace("=ON", "=TRUE").replace("=OFF", "=FALSE");
                  
-                String subltl = entry.getLtlProperty().replace("[", "G").replace("]", "").replace("==", "=").replace("&&", "&").replace ("\n", "")
+                String subltl = entry.replace("[", "G").replace("]", "").replace("==", "=").replace("&&", "&").replace ("\n", "")
                          .replace("*", "");
                 subltl.replace("=On", "=TRUE").replace("=Off", "=FALSE").replace("= On", "=TRUE").
           replace("= Off", "=FALSE").replace("=ON", "=TRUE").replace("=OFF", "=FALSE").replace("=ON", "=TRUE").replace("=OFF", "=FALSE");

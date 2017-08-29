@@ -21,6 +21,9 @@ public class ParseSTPAMain {
 	public STPADataModelController getSTPAdataModel() {
 		return STPAdataModel;
 	}
+	public void setSTPAdataModel(STPADataModelController STPAdatamodel) {
+		this.STPAdataModel=STPAdatamodel;
+	}
 
 	public ParseSTPAMain(String path) {
 		this.STPAfilepath = path;

@@ -13,12 +13,16 @@ import java.util.UUID;
 import xstampp.astpa.model.DataModelController;
 import xstampp.astpa.model.causalfactor.ICausalController;
 import xstampp.astpa.model.causalfactor.interfaces.ICausalComponent;
+import xstampp.astpa.model.controlaction.ControlAction;
+import xstampp.astpa.model.controlaction.ControlActionController;
 import xstampp.astpa.model.controlaction.interfaces.IControlAction;
 import xstampp.astpa.model.controlstructure.ControlStructureController;
 //import xstampp.astpa.haz.controlaction.interfaces.IControlAction;
 //import xstampp.astpa.model.controlaction.interfaces.IControlAction;
 import xstampp.astpa.model.controlstructure.components.Component;
 import xstampp.astpa.model.controlstructure.interfaces.IRectangleComponent;
+import xstampp.model.AbstractLTLProvider;
+import xstampp.model.AbstractLtlProviderData;
 import xstampp.model.IDataModel;
 
 public class STPADataModelController  {
@@ -108,28 +112,72 @@ public class STPADataModelController  {
         return controllers;
     }
 
+    
+    public List<AbstractLTLProvider> fetchSafetyConstraintsAs() {
+         
+
+       
+         List<AbstractLTLProvider> tempSafetyConstraints = new ArrayList<AbstractLTLProvider>();
+
+         tempSafetyConstraints = dataModel.getAllScenarios(false, true, false);
+
+         return tempSafetyConstraints;
+    }
+    
+    
+    public List<String> fetchSafetyConstraints() {
+        List<String> safetyconstraints = new ArrayList<String>();
+
+       
+         List<AbstractLTLProvider> tempSafetyConstraints = new ArrayList<AbstractLTLProvider>();
+
+         tempSafetyConstraints = dataModel.getAllScenarios(false, true, false);
+
+        for (AbstractLTLProvider sc : tempSafetyConstraints) {
+             if (sc != null) {
+            	 safetyconstraints.add(sc.getRefinedSafetyConstraint());
+           }
+         }
+         
+        
+        return safetyconstraints;
+    }
+    
+    
+    
+    
+    public List<String> fetchLTLs() {
+        List<String> LTLs = new ArrayList<String>();
+
+       
+         List<AbstractLTLProvider> tempLTLs = new ArrayList<AbstractLTLProvider>();
+
+         tempLTLs = dataModel.getLTLPropertys();
+
+        for (AbstractLTLProvider ltl : tempLTLs) {
+             if (ltl != null) {
+               LTLs.add(ltl.getLtlProperty());
+           }
+         }
+         
+        
+        return LTLs;
+    }
+    
     public List<String> fetchControlActionComponents() {
         List<String> controlactions = new ArrayList<String>();
 
-//        List<ControlAction> tempControlactions = new ArrayList<ControlAction>();
-//
-//        tempControlactions = dataModel.getControlStructureEditorController().getAllControlActionsU();
-//
-//        for (ControlAction ac : tempControlactions) {
-//            if (ac != null) {
-//                controlactions.add(ac.getTitle());
-//            }
-//        }
-        List<IControlAction> tempControlactions = new ArrayList<IControlAction>();
+       
+         List<IControlAction> tempControlactions = new ArrayList<IControlAction>();
 
-        tempControlactions = dataModel.getAllControlActionsU();
+         tempControlactions = dataModel.getAllControlActions();
 
         for (IControlAction ac : tempControlactions) {
-            if (ac != null) {
-                controlactions.add(ac.getTitle());
-            }
-        }
-        tempControlactions = dataModel.getAllControlActionsU();
+             if (ac != null) {
+               controlactions.add(ac.getTitle());
+           }
+         }
+       // tempControlactions = dataModel.getAllControlActions();
         
         return controlactions;
     }
