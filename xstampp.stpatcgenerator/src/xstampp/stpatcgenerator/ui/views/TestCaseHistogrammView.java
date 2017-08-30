@@ -30,6 +30,7 @@ import org.jfree.ui.RectangleAnchor;
 import org.jfree.ui.TextAnchor;
 
 import xstampp.astpa.model.extendedData.RefinedSafetyRule;
+import xstampp.model.AbstractLTLProvider;
 import xstampp.stpatcgenerator.controller.STPATCGModelController;
 import xstampp.stpatcgenerator.model.astpa.ParseSTPAMain;
 
@@ -48,8 +49,7 @@ public class TestCaseHistogrammView extends ViewPart{
 	DefaultTableModel tcModel = STPATCGModelController.getTestCaseTableModel();
 	private JFreeChart chart;
 	private ParseSTPAMain parseSTPA = STPATCGModelController.getConfWizard().getParseSTPA();
-	List<RefinedSafetyRule> STPAConstraints = (List<RefinedSafetyRule>) (List<?>) parseSTPA
-			.getdataModel().getAllRefinedRules(null);
+	List<AbstractLTLProvider> STPAConstraints;
 	
 	@Override
 	public void createPartControl(Composite parent) {
@@ -90,7 +90,9 @@ public class TestCaseHistogrammView extends ViewPart{
 	        XYPlot plot = (XYPlot) chart.getPlot();
 	        plot.setDomainCrosshairVisible(true);
 	        NumberAxis domain = (NumberAxis) plot.getDomainAxis();
+	        
 	        domain.setRange(minX, maxX);
+	       
 	        domain.setTickUnit(new NumberTickUnit(1));
 	        final IntervalMarker target = new IntervalMarker(400.0, 700.0);
 	        target.setLabel("Target Range");
@@ -112,6 +114,8 @@ public class TestCaseHistogrammView extends ViewPart{
 	}
 
 	private int[] calSSRTraceResult(DefaultTableModel tcModel){
+		
+		STPAConstraints=parseSTPA.getSTPAdataModel(). fetchSafetyConstraintsAs();
 		int ssrNumber = STPAConstraints.size();
 //		int ssrNumber = STPATCGModelController.getGtcConfigEditor().getSTPAConstraints().size();
 		int[] ssrTraceResult = new int[ssrNumber];
@@ -121,9 +125,16 @@ public class TestCaseHistogrammView extends ViewPart{
 			String[] tmpSplit = tmp.split(",");
 			for(String s: tmpSplit){
 				if(!s.equals(" ") && !s.equals("")){
-					Integer ssrId = Integer.parseInt(s.trim());				
-					// count the test case number for relevant ssr 
+					try
+					{
+					Integer ssrId = Integer.parseInt(s.trim());	
 					ssrTraceResult[ssrId-1]++;
+					}
+					catch (Exception ex)
+					{
+						
+					}
+					
 				}				
 			}
 		}

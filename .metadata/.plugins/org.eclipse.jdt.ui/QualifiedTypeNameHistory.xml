@@ -8,4 +8,8 @@
 <fullyQualifiedTypeName name="xstampp.astpa.model.causalfactor.ICausalController"/>
 <fullyQualifiedTypeName name="xstampp.astpa.model.controlstructure.ControlStructureController"/>
 <fullyQualifiedTypeName name="xstampp.astpa.model.DataModelController"/>
+<fullyQualifiedTypeName name="xstampp.astpa.model.controlaction.ControlAction"/>
+<fullyQualifiedTypeName name="xstampp.astpa.model.controlaction.ControlActionController"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="xstampp.model.AbstractLtlProviderData"/>
 </qualifiedTypeNameHistroy>

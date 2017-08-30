@@ -119,7 +119,7 @@ public class STPADataModelController  {
        
          List<AbstractLTLProvider> tempSafetyConstraints = new ArrayList<AbstractLTLProvider>();
 
-         tempSafetyConstraints = dataModel.getAllScenarios(false, true, false);
+         tempSafetyConstraints = dataModel.getAllScenarios(true, false, false);
 
          return tempSafetyConstraints;
     }
@@ -131,7 +131,7 @@ public class STPADataModelController  {
        
          List<AbstractLTLProvider> tempSafetyConstraints = new ArrayList<AbstractLTLProvider>();
 
-         tempSafetyConstraints = dataModel.getAllScenarios(false, true, false);
+         tempSafetyConstraints = dataModel.getAllScenarios(true, false, false);
 
         for (AbstractLTLProvider sc : tempSafetyConstraints) {
              if (sc != null) {
