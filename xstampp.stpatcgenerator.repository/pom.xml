@@ -5,7 +5,7 @@
   <parent>
   	<groupId>xstampp.stpatcgenerator.group</groupId>
   	<artifactId>xstampp.stpatcgenerator.parent</artifactId>
-  	<version>1.0.1</version>
+  	<version>1.0.2</version>
   	<relativePath>../xstampp.stpatcgenerator.parent</relativePath>
   </parent>
 
